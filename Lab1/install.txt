@@ -1,0 +1,10 @@
+El makefile funciona de la siguiente manera:
+
+Cuenta solamente con un target "compileRunDelete". Este primeramente realiza la
+compilación del archivo lab1.cpp, creando un ejecutable llamado "out.o".
+
+Seguidamente corre el programa introduciendo por consola una cadena de bases nitrogenadas,
+en este caso se le introduce la cadena UAACCUUCUACUACGUAG. El mismo imprime en la
+consola el resultado de la traducción a los aminoácidos correspondientes.
+
+Finalmente, luego de correr el ejecutable, se borra el mismo.

@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{Desarrollo}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Clase base}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Clases derivadas}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Tri\341ngulo}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Cuadrado}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{C\355rculo}{subsection.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Sobrecarga de operadores}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Main}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.5}{Diagrama de clases}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Conclusiones}{}% 11
