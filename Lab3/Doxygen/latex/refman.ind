@@ -1,0 +1,28 @@
+\begin{theindex}
+
+  \item {Calculadora$<$ T $>$}, \hyperpage{3}
+
+  \indexspace
+
+  \item {Fraccion}, \hyperpage{4}
+    \subitem {operator+}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Matriz}, \hyperpage{5}
+    \subitem {operator+}, \hyperpage{6}
+
+  \indexspace
+
+  \item {operator+}
+    \subitem {Fraccion}, \hyperpage{5}
+    \subitem {Matriz}, \hyperpage{6}
+    \subitem {Polinomio}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Polinomio}, \hyperpage{6}
+    \subitem {operator+}, \hyperpage{7}
+    \subitem {Polinomio}, \hyperpage{7}
+
+\end{theindex}
