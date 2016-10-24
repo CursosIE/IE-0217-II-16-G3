@@ -1,0 +1,35 @@
+El presente proyecto fue elaborado por Esteban Vargas(carnet B16998) y Laura Rincón
+(carnet B55863),estudiantes de la carrera de Ingeniería Eléctrica de la 
+Universidad de Costa Rica.
+
+**********Codigos**********:
+En este proyecto se implemento en C++ el automata celular inventado por John Conway
+conocido como el Juego de la Vida. Se crearon los archivos de código 
+siguientes:
+
+JuegoDeLaVida.cpp: contiene la lógica del programa
+
+JuegoDeLaVida.h: contiene los encabezados
+
+main.cpp: crea e inicializa el tablero con algún patrón y llama a las 
+funciones.
+
+El programa de C++ escribe un archivo de texto con las generaciones del juego
+representadas como matrices de 1's y 0's.
+
+Además de estos se creó un programa en Python el cual agarra la salida 
+out.txt y crea una imagen para cada generación del juego.
+
+Para utilizar el programa de Python se debe ingresar la locación del archivo
+out.txt además de las dimensiones en pixeles de las imagenes a crear. A 
+continuación se presenta un ejemplo:
+
+$ python a.py ~/NetBeansProjects/JuegoDeLaVida/out.txt 22 22
+
+*los codigos se encuentran en la carpeta src
+
+**********Otras carpetas**********
+Doxygen: contiene la documentación creada por Doxygen tanto en pdf como en html.
+Imagenes creadas: contiene las imagenes creadas por el archivo de Python para 4 patrones conocidos.
+Videos Juego de la Vida: contiene los videos del desarrollo de generaciones para 4 patrones conocidos.
+Informe: Contiene el informe en pdf realizado en latex.

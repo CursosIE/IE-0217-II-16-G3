@@ -1,0 +1,6 @@
+El makefile cuenta con dos targets:
+
+Cmasmas: compila los codigos en C++, imprime en consola las generaciones del Juego de la Vida y crea el archivo "out.txt" que contiene las generaciones del juego.
+Al final borra el ejecutable "main". 
+
+Python: corre el archivo "a.py" y crea "N" imagenes de las "N" generaciones del juego, a partir del texto del "out.txt". Ademas recibe también el tamaño de las imagenes que va a crear en pixeles x pixeles.

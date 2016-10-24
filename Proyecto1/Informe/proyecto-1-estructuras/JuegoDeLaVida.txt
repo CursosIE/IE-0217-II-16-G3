@@ -1,0 +1,356 @@
+*************************************************************************************************
+*************************************************************************************************
+Se contabilizará las líneas de comandos para obtener la función de tiempo del programa.
+En la cuál se toma como:
+n= dimensión del tablero (dimesionTab)
+N= número de generaciones (NumGen)
+*************************************************************************************************
+*************************************************************************************************
+
+
+#include "JuegoDeLaVida.h"
+using namespace std;
+
+
+JuegoDeLaVida::JuegoDeLaVida(){
+    
+}
+
+
+JuegoDeLaVida::JuegoDeLaVida(int dimensionTab, int** contenidoTab){
+    this->dimensionTab = dimensionTab; // (1) asignación
+    this->contenidoTab = contenidoTab; // (1) asignación
+}
+
+********************* Inicializacion del programa = 2 ********************************************
+
+
+JuegoDeLaVida::~JuegoDeLaVida(){
+}
+
+void JuegoDeLaVida::Iniciar(JuegoDeLaVida&){
+
+    
+    int** contTemporal = new int*[dimensionTab]; 
+    // (1) inicialización + (1) llamado a memoria
+    
+    for (int i = 0; i < dimensionTab; i++) { 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+        contTemporal[i] = new int[dimensionTab]; //(1) inicialización + (2) llamados a memoria
+    }
+
+    for (int i = 0; i < dimensionTab; i++) { 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+       
+        for (int j = 0; j < dimensionTab; j++) { 
+        //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+            contTemporal[i][j] = 0; //(1) asignacion + (2) llamados a memoria
+        }
+    }
+    
+    JuegoDeLaVida* Jtemp = new JuegoDeLaVida(this->dimensionTab,this->contenidoTab); // (1)inicialización + (2) llamados a memoria
+    
+    Jtemp->Supervivencia(*Jtemp,contTemporal); // 20 8048 n^2 + 4n + 7  función Supervivencia + (2) llamados a memoria
+	
+	
+	********************** Funcion Iniciar1 = 2 + 4n*(3) + 4n*(4n*3) + 3 + 20 8048n^2 + 4n + 7 + 2 = 208 096n^2 + 16n + 14 ****************************
+}
+
+void JuegoDeLaVida::Iniciar(JuegoDeLaVida&, int NumGen){
+    
+
+    int** contTemporal = new int*[dimensionTab]; // (1) inicialización + (1) llamado a memoria
+    
+    for (int i = 0; i < dimensionTab; i++) { 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+        contTemporal[i] = new int[dimensionTab]; //(1) inicialización + (2) llamados a memoria
+    }
+
+    for (int i = 0; i < dimensionTab; i++) { 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+        for (int j = 0; j < dimensionTab; j++) { 
+        //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+            contTemporal[i][j] = 0;  //(1) asignacion + (2) llamados a memoria
+        }
+    }
+    
+    
+    JuegoDeLaVida* Jtemp = new JuegoDeLaVida(this->dimensionTab,this->contenidoTab); // (1)inicialización + (2) llamados a memoria
+    
+    Jtemp->Supervivencia(*Jtemp,contTemporal,NumGen); // 6000Nn + 128n^(2) + 4n + 5 función Supervivencia + (3) llamados a memoria
+    
+    
+   **** Funcion Iniciar2 = 2 + 4n*(3) + 4n*(4n*3) + 3 + 600Nn^(2) - 1200Nn + 600N + 128n^(2) + 4n + 5 + 3 = 600Nn^(2) - 1200Nn + 600N + 176n^(2) + 16n + 13 **********************
+}
+
+void JuegoDeLaVida::Supervivencia(JuegoDeLaVida&,int** contTemporal, int NumGen){ 
+   
+    JuegoDeLaVida* Jtemp = new JuegoDeLaVida(this->dimensionTab,this->contenidoTab); // (1) inicialización + (2) llamados a memoria
+    
+    for(int a=0;a<NumGen;a++){ 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *NumGen veces
+      
+        for (int i = 1; i < dimensionTab-1; i++) { 
+        //[(1) asignación +(1) comparacion + (1) llamado a memoria + (1) reducción + (1) incremento] se repite *dimensionTab-1 veces
+        
+            for (int j = 1; j < dimensionTab-1; j++) { 
+            //[(1) asignación +(1) comparacion +(1) llamado a memoria + + (1) reducción + (1) incremento] se repite *dimensionTab-1 veces
+          
+                if(contenidoTab[i][j] == 0){ // (1) comparación + (2) llamados a memoria
+            
+                    int temp1=0; //(1) asignación
+            
+                    if(contenidoTab[i][j-1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (1) incremento
+                    
+                    if(contenidoTab[i][j+1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) incrementos
+                    
+                    if(contenidoTab[i-1][j-1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) reducciones + (1) incremento
+                    
+                    if(contenidoTab[i-1][j]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (1) incremento
+                    
+                    if(contenidoTab[i-1][j+1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j-1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j+1]==1){temp1++;} 
+                    //(1) comparación + (3) llamados a memoria + (3) incrementos
+
+                    if(temp1==3){contTemporal[i][j]=1;} 
+                    //(1)comparación + (3)llamados a memoria + (1) asignación
+                    
+                    if(temp1<3 || temp1>3){contTemporal[i][j]=0;} 
+                    // (2) comaparación + (4)llamados a memoria + (1) asignación
+
+                }
+           
+           
+                else if(contenidoTab[i][j] == 1){ // (1) comparación + (2) llamados a memoria
+                    
+                    int temp2=0; //(1) asignación
+                    
+                    
+                    if(contenidoTab[i][j-1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (1) incremento
+                    
+                    if(contenidoTab[i][j+1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) incrementos
+                    
+                    if(contenidoTab[i-1][j-1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) reducciones + (1) incremento
+                    
+                    if(contenidoTab[i-1][j]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (1) incremento
+                    
+                    if(contenidoTab[i-1][j+1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j-1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (1) reducción + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (2) incrementos
+                    
+                    if(contenidoTab[i+1][j+1]==1){temp2++;} 
+                    //(1) comparación + (3) llamados a memoria + (3) incrementos
+                   
+                    if(temp2==2 || temp2==3){contTemporal[i][j]=1;}
+                    // (2) comaparación + (4)llamados a memoria + (1) asignación
+                    
+                    if(temp2<2 || temp2>3){contTemporal[i][j]=0;} 
+                    // (2) comaparación + (4)llamados a memoria + (1) asignación
+                    
+                    ****************** 3 + 6 + 6 + 6 + 6 + 7 + 7 + 5 + 7 + 7 = 60 *********************
+
+                }
+            }
+        }
+       
+		
+        for (int i = 0; i < dimensionTab; i++) { ++) { 
+        //[(1) asignación +(1) comparacion +(1) llamado a memoria + + (1) reducción + (1) incremento] se repite *dimensionTab veces
+        
+            for (int j = 0; j < dimensionTab; j++) { ++) 
+            //[(1) asignación +(1) comparacion +(1) llamado a memoria + + (1) reducción + (1) incremento] se repite *dimensionTab veces
+            
+                contenidoTab[i][j] = contTemporal[i][j]; //(1) asignación + (4) llamados a memoria
+            }
+        }
+        
+        Jtemp->Imprimir(*Jtemp);  // (48n^(2) + 4n + 1) funcion imprimir + (1) llamado a memoria
+    }
+    
+    ***** Función Supervivencia =  3 + 4N*(5(n-1)*5(n-1)*60) + 4n*4n*5 + 48n^(2) + 4n + 1 +1 = 600Nn^(2) - 1200Nn + 600N + 128n^(2) + 4n + 5 ***** 
+    
+}
+
+void JuegoDeLaVida::Supervivencia(JuegoDeLaVida&,int** contTemporal){ 
+    
+    JuegoDeLaVida* Jtemp = new JuegoDeLaVida(this->dimensionTab,this->contenidoTab); // (1) inicialización + (2) llamados a memoria
+    
+    int NumGen = 0; //(1) asignación
+    
+    while(contenidoTab!= contTemporal &&  NumGen < 100){ // (2) comparaciones -- se repite 100 veces
+        
+        for (int i = 1; i < dimensionTab-1; i++) { 
+        //[(1) asignación +(1) comparacion + (1) llamado a memoria + (1) reducción + (1) incremento] se repite *dimensionTab veces
+        
+            for (int j = 1; j < dimensionTab-1; j++) {
+             //[(1) asignación +(1) comparacion + (1) llamado a memoria + (1) reducción + (1) incremento] se repite *dimensionTab veces
+                
+                if(contenidoTab[i][j] == 0){
+              
+                    int temp1=0;
+              
+                    if(contenidoTab[i][j-1]==1){temp1++;}
+                    if(contenidoTab[i][j+1]==1){temp1++;}
+                    if(contenidoTab[i-1][j-1]==1){temp1++;}
+                    if(contenidoTab[i-1][j]==1){temp1++;}
+                    if(contenidoTab[i-1][j+1]==1){temp1++;}
+                    if(contenidoTab[i+1][j-1]==1){temp1++;}
+                    if(contenidoTab[i+1][j]==1){temp1++;}
+                    if(contenidoTab[i+1][j+1]==1){temp1++;}
+                    //cout<<"i="<<i<<" j="<<j<<" temp1="<<temp1<<endl;
+                    if(temp1==3){contTemporal[i][j]=1;}
+                    if(temp1<3 || temp1>3){contTemporal[i][j]=0;}
+
+                }
+               
+                else if(contenidoTab[i][j] == 1){
+                    int temp2=0;
+                    if(contenidoTab[i][j-1]==1){temp2++;}
+                    if(contenidoTab[i][j+1]==1){temp2++;}
+                    if(contenidoTab[i-1][j-1]==1){temp2++;}
+                    if(contenidoTab[i-1][j]==1){temp2++;}
+                    if(contenidoTab[i-1][j+1]==1){temp2++;}
+                    if(contenidoTab[i+1][j-1]==1){temp2++;}
+                    if(contenidoTab[i+1][j]==1){temp2++;}
+                    if(contenidoTab[i+1][j+1]==1){temp2++;}
+                    //cout<<"i="<<i<<" j="<<j<<" temp2="<<temp2<<endl;
+                    if(temp2==2 || temp2==3){contTemporal[i][j]=1;}
+                    if(temp2<2 || temp2>3){contTemporal[i][j]=0;}
+
+                }
+            }
+            ****** 60 similar a la Función Supervivencia1 **********
+        }
+     
+        for (int i = 0; i < dimensionTab; i++) { 
+        //[(1) asignación +(1) comparacion + (1) llamado a memoria + (1) incremento] se repite *dimensionTab veces
+        
+            for (int j = 0; j < dimensionTab; j++) { 
+            //[(1) asignación +(1) comparacion + (1) llamado a memoria + (1) incremento] se repite *dimensionTab veces
+            
+                contenidoTab[i][j] = contTemporal[i][j]; 
+                //(4) llamados a memoria + (1) asignación
+            }
+        }
+        
+        NumGen++; //(1) incremento
+        
+        Jtemp->Imprimir(*Jtemp); // (48n^(2) + 4n + 1) Función imprimir + (1) llamado de memoria
+    }
+    
+    
+    **************** Función Sobrevivir2 =  3 + 1 + 2*100*(4n*4n*60 + 16n^2*5) + (48n^(2) + 4n + 3) = 20 8048 n^2 + 4n + 7 
+}
+
+void JuegoDeLaVida::Imprimir(const JuegoDeLaVida&){
+    
+    for(int i = 0; i < dimensionTab; i++){ 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+    
+        for(int j=0; j< dimensionTab ;j++){ 
+        //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesionTab veces
+        
+            cout << contenidoTab[i][j] << " "; // (1) cout + (2) llamados a memoria
+        }
+        cout << endl; // (1)cout
+    }
+    cout<<"------------------------"<<endl; //(1) cout
+    
+	************* Función Imprimir = 4n*(4n*(3)+1) +1 = 48n^(2) + 4n + 1************* 
+}
+
+
+*******************************************************************************************************
+*******************************************************************************************************
+
+int main(int argc, char *argv[]) {
+    
+    
+    cout << "Juego de la vida" << endl << "-----------------------" << endl; //(1) cout
+    
+    int dimension=12; // (1) asignación
+    
+    int** cont = new int*[dimension]; //(1) inicialización + (1) llamado a memoria
+    
+    for (int i = 0; i < dimension; i++) { 
+    //[(1) asignación +(1) comparacion +(1) llamado a memoria + (1) incremento] se repite *dimesion veces
+    
+        cont[i] = new int[dimension]; //(1) inicialización + (1) llamado a memoria
+    }
+    
+    for (int i = 0; i < dimension; i++) { 
+    //[(1) asignación +(1) comparación +(1) llamado a memoria + (1) incremento] se repite *dimesion veces
+    
+        for (int j = 0; j < dimension; j++) { 
+        // [(1) asignación +(1) comparación +(1) llamado a memoria + (1) incremento] se repite *dimesion veces
+        
+            cont[i][j] = 0; 
+            // (1) asignación + (2) llamados a memoria
+        }
+    }
+    
+    ///Patrón linea oscilante vertical-horizontal
+    cont[5][4]=1; // (1) asignación
+    cont[5][5]=1; // (1) asignación
+    cont[5][6]=1; // (1) asignación
+    
+**************************** Construccion de patron = 4 + 4n*(2) + 4n*(4n*(3)) = 4 + 8n + 48n^(2)*****************************
+    
+    
+    
+    
+    cout <<"******Patron inicial*****"<<endl; // (1) cout
+    
+    JuegoDeLaVida* J1=new JuegoDeLaVida(dimension,cont); //(1) inicialización + (2) llamado a memoria
+    
+    J1->Imprimir(*J1); // [48n^(2) + 4n + 1] funcion imprimir + (1) llamado a memoria
+    
+    cout <<"************************"<<endl; //(1) cout
+
+    /////////////////////////////////////////////
+    
+    J1->Iniciar(*J1); // 20 8048 n^2 + 4n + 7
+    
+    cout<<"-----------------------"<<endl; //(1) cout 
+    
+    return 0; //(1) retorno
+    
+    
+}
+
+	****************************************************************************************
+	T1 = 1 + 3 + [48n^(2) + 4n + 1] + 1 + 1 + 208 096n^2 + 16n + 14 + 1 + 1 + 2 + Construcción del patrón =  208 144n^2 + 20n + 24 + Construcción del patrón
+	
+	T2 = 1 + 3 + [48n^(2) + 4n + 1]  + 1 + 1 + 600Nn^(2) - 1200Nn + 600N + 176n^(2) + 16n + 13 + 2 + Construcción del patrón = 600Nn^2 + 224n^(2) - 1200Nn + 600N + 20n + 22 + Construcción del patrón
+	
+	
+	
+	
+	
+
