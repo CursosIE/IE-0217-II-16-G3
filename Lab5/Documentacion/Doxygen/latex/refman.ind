@@ -1,0 +1,26 @@
+\begin{theindex}
+
+  \item {Carta}, \hyperpage{5}
+  \item {Celda$<$ T $>$}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Jugador}, \hyperpage{7}
+  \item {jugar}
+    \subitem {Mesa}, \hyperpage{18}
+
+  \indexspace
+
+  \item {Lista$<$ T $>$}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Mazo}, \hyperpage{14}
+  \item {Mesa}, \hyperpage{17}
+    \subitem {jugar}, \hyperpage{18}
+
+  \indexspace
+
+  \item {Portero}, \hyperpage{19}
+
+\end{theindex}

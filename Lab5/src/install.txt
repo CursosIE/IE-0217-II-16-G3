@@ -1,0 +1,9 @@
+El makefile funciona de la siguiente manera:
+
+Cuenta solamente con un target "compileRunDelete". Este primeramente realiza la 
+compilación de todos los archivos fuente, creando un ejecutable llamado "main".
+
+Seguidamente corre el programa, con una entrada de fila de "EEEDDDTTT", desplegando el resultado en consola.
+
+Finalmente, luego de terminar la ejecución de "main", éste se elimina.
+

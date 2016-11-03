@@ -1,0 +1,4 @@
+<map id="Lista&lt; T &gt;" name="Lista&lt; T &gt;">
+<area shape="rect" id="node2" href="$class_lista_con_arreglo.html" title="{ListaConArreglo\&lt; T \&gt;\n|+ tam\l+ ultimo\l+ data\l|+ ListaConArreglo()\l+ ListaConArreglo()\l+ ~ListaConArreglo()\l+ ListaConArreglo()\l+ agregar()\l+ eliminarK()\l+ eliminar()\l+ eliminar_u()\l+ buscar()\l+ siguienteK()\l+ anteriorK()\l+ recuperar()\l+ imprimir()\l}" alt="" coords="5,219,152,501"/>
+<area shape="rect" id="node3" href="$class_lista_con_puntero.html" title="{ListaConPuntero\&lt; T \&gt;\n|+ ultima\l+ primera\l+ anterior\l+ tam\l|+ ListaConPuntero()\l+ ~ListaConPuntero()\l+ ListaConPuntero()\l+ agregar()\l+ eliminar()\l+ ultimo_elemento()\l+ imprimir()\l}" alt="" coords="177,255,327,465"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Mesa" name="Mesa">
+<area shape="rect" id="node2" href="$class_jugador.html" title="{Jugador\n|+ acumulado\l+ id\l+ estado\l|+ Jugador()\l+ Jugador()\l+ ~Jugador()\l+ perder()\l}" alt="" coords="5,424,103,575"/>
+<area shape="rect" id="node3" href="$class_mazo.html" title="{Mazo\n|+ AsDeEspada\l+ AsDeDiamante\l+ DosDeEspada\l+ DosDeCorazon\l+ DosDeTrebol\l+ DosDeDiamante\l+ TresDeEspada\l+ TresDeCorazon\l+ TresDeTrebol\l+ TresDeDiamante\land 33 more...\l|+ Mazo()\l+ ~Mazo()\l+ barajar()\l+ print()\l}" alt="" coords="127,365,261,633"/>
+<area shape="rect" id="node4" href="$class_carta.html" title="{Carta\n|+ valor\l+ nombre\l+ palo\l|+ Carta()\l+ Carta()\l+ ~Carta()\l+ imprimir()\l}" alt="" coords="150,5,238,156"/>
+</map>

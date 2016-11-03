@@ -1,0 +1,86 @@
+./main EEETTTDDD
+Largo fila: 9
+Ejecutivos: 3
+Trabajadores: 3
+Desempleados: 3
+***Fila de espera***
+E	E	T	E	T	D	T	D	D	
+**********Mesa 1 Estado INICIAL**********
+****Jugador 1****
+Acumulado de cartas: 0
+El id del jugador es: E
+No ha ganado ni perdido
+****Jugador 2****
+Acumulado de cartas: 0
+El id del jugador es: E
+No ha ganado ni perdido
+****Jugador 3****
+Acumulado de cartas: 0
+El id del jugador es: T
+No ha ganado ni perdido
+**********Mesa 2 Estado INICIAL**********
+****Jugador 1****
+Acumulado de cartas: 0
+El id del jugador es: E
+No ha ganado ni perdido
+****Jugador 2****
+Acumulado de cartas: 0
+El id del jugador es: T
+No ha ganado ni perdido
+****Jugador 3****
+Acumulado de cartas: 0
+El id del jugador es: D
+No ha ganado ni perdido
+**********Mesa 3 Estado INICIAL**********
+****Jugador 1****
+Acumulado de cartas: 0
+El id del jugador es: T
+No ha ganado ni perdido
+****Jugador 2****
+Acumulado de cartas: 0
+El id del jugador es: D
+No ha ganado ni perdido
+****Jugador 3****
+Acumulado de cartas: 0
+El id del jugador es: D
+No ha ganado ni perdido
+**********Mesa 1 Estado FINAL**********
+****Jugador 1****
+Acumulado de cartas: 11
+El id del jugador es: E
+Ganó
+****Jugador 2****
+Acumulado de cartas: 27
+El id del jugador es: E
+Perdió
+****Jugador 3****
+Acumulado de cartas: 19
+El id del jugador es: T
+Ganó
+**********Mesa 2 Estado FINAL**********
+****Jugador 1****
+Acumulado de cartas: 23
+El id del jugador es: E
+Perdió
+****Jugador 2****
+Acumulado de cartas: 21
+El id del jugador es: T
+Ganó
+****Jugador 3****
+Acumulado de cartas: 19
+El id del jugador es: D
+Ganó
+**********Mesa 3 Estado FINAL**********
+****Jugador 1****
+Acumulado de cartas: 20
+El id del jugador es: T
+No ha ganado ni perdido
+****Jugador 2****
+Acumulado de cartas: 23
+El id del jugador es: D
+Perdió
+****Jugador 3****
+Acumulado de cartas: 9
+El id del jugador es: D
+No ha ganado ni perdido
+
