@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
     Astar A = Astar(10,1,1,5,5);
     A.Mapa->print_types();
     A.Mapa->print_H_values();
+    A.Mapa->print_G_values();    
     return 0;
 }
 

@@ -34,7 +34,17 @@ Matrix::~Matrix() {
 
 int Matrix::get_G_value(Node actual, Node padre){
     int g = padre.G_value+actual.G_value;
-    
+}
+
+int Matrix::get_Movement_value(Node a, Node b){
+    int m=0;
+    if(a.pos_x==b.pos_x || a.pos_y==b.pos_y){
+        m=10;
+    }
+    else{
+        m=14;
+    }
+    return m;
 }
     
 int Matrix::get_H_value(Node actual, Node final){

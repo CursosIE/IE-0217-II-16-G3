@@ -32,6 +32,16 @@ Node::Node(int f, int g, int h, int type, Node* father){
     type = type;
 }
 
+int Node::operator==(const Node &N){
+    if(this->pos_x==N.pos_x && this->pos_y==N.pos_y){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
+}
+
 Node::~Node(){
 
 }

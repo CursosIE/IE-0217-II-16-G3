@@ -33,6 +33,8 @@ public:
     
     int get_G_value(Node actual,Node Padre);
     
+    int get_Movement_value(Node a,Node b);
+    
     int get_H_value(Node actual, Node final);
     
     int get_F_value(Node actual);

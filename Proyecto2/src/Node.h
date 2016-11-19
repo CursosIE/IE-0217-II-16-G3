@@ -42,6 +42,8 @@ public:
     
     void set_obstacle();
     
+    int operator==(const Node &N);
+    
 private:
 
 };
