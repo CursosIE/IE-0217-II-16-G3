@@ -1,0 +1,4 @@
+<map id="Astar" name="Astar">
+<area shape="rect" id="node2" href="$class_node.html" title="{Node\n|+ F_value\l+ G_value\l+ H_value\l+ type\l+ pos_x\l+ pos_y\l|+ Node()\l+ Node()\l+ Node()\l+ Node()\l+ ~Node()\l+ set_parent()\l+ set_start()\l+ set_goal()\l+ set_obstacle()\l+ operator==()\l+ operator=()\l+ operator!=()\l+ operator\&lt;()\l+ operator\&gt;()\l}" alt="" coords="74,5,190,347"/>
+<area shape="rect" id="node3" href="$class_matrix.html" title="{Matrix\n|+ size\l|+ Matrix()\l+ ~Matrix()\l+ set_G_value()\l+ get_G_value()\l+ get_Movement_value()\l+ get_H_value()\l+ get_F_value()\l+ print_types()\l+ print_G_values()\l+ print_H_values()\l+ print_F_values()\l+ print_parents()\l}" alt="" coords="159,409,326,648"/>
+</map>

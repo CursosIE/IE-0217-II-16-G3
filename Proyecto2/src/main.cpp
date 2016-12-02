@@ -12,7 +12,6 @@
  */
 
 #include <cstdlib>
-
 #include "Matrix.h"
 #include "Astar.h"
 
@@ -22,14 +21,9 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-
-    /*Matrix M = Matrix(10);
-    M.print();*/
     
-    Astar A = Astar(10,1,1,5,5);
+    Astar A = Astar(6,0,5,4,5);//tamano 6, 0 y 5 coordenadas nodo inicial, 4 y 5 coordenadas nodo final
+
     A.Mapa->print_types();
-    A.Mapa->print_H_values();
-    A.Mapa->print_G_values();    
     return 0;
 }
-

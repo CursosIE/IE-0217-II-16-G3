@@ -1,0 +1,32 @@
+El presente proyecto fue elaborado por Esteban Vargas(carnet B16998) y Laura Rincón
+(carnet B55863),estudiantes de la carrera de Ingeniería Eléctrica de la 
+Universidad de Costa Rica.
+
+**********Codigos**********:
+En este proyecto se implemento en C++ el algoritmo de búsqueda A*. 
+
+Este algoritmo encuentra el camino más corto entre dos nodos en un grafo. Para la presente 
+implementación se creó una matriz de nodos.
+
+Se crearon las clases:
+-Nodo
+-Matriz
+-Astar
+
+El programa de C++ escribe un archivo de texto out.txt con el mapa  como una matriz de valores enteros, en el que 1 representa el nodo inicial, el 2 representa el nodo final, el 3 representa un obstáculo,el 4 representa el camino encontrado por el algoritmo y por último los ceros son nodos normales.
+
+Además de esto se creó un programa en Python el cual agarra la salida 
+out.txt y crea una imagen para visualizar el resultado del programa.
+
+Para utilizar el programa de Python se debe ingresar la locación del archivo
+out.txt además de las dimensiones en pixeles de la imagen a crear. A 
+continuación se presenta un ejemplo:
+
+$ python b.py ~/NetBeansProjects/Astar/out.txt 6 6
+
+*los codigos se encuentran en la carpeta src
+
+**********Otras carpetas**********
+Doxygen: contiene la documentación creada por Doxygen tanto en pdf como en html.
+Imagenes creadas: contiene ejemplos de imagenes creadas por el archivo de Python para diversas configuraciones de obstáculos mostrando cómo el algoritmo encontró el camino más corto.
+Informe: Contiene el informe escrito en pdf realizado en latex.

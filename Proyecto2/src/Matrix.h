@@ -13,7 +13,7 @@
 
 #ifndef MATRIX_H
 #define MATRIX_H
-
+#include <fstream>
 #include <iostream>
 #include <string.h>
 using namespace std;
@@ -24,6 +24,8 @@ class Matrix {
 public:
 
     Matrix(int tam);
+    
+    //Matrix(const Matrix &M);
 
     virtual ~Matrix();
     
@@ -31,20 +33,26 @@ public:
     
     int size;
     
-    int get_G_value(Node actual,Node Padre);
+    void set_G_value(Node &start);
     
-    int get_Movement_value(Node a,Node b);
+    int get_G_value(int actual_G, int padre_G);
     
-    int get_H_value(Node actual, Node final);
+    int get_Movement_value(Node &actual,Node &Padre);
     
-    int get_F_value(Node actual);
+    int get_H_value(Node &actual, Node &final);
+    
+    int get_F_value(Node &actual);
+    
+    
+    
+    /*int is_adyacent(Node current,Node final);*/
     
     void print_types();
     void print_G_values();
     void print_H_values();
     void print_F_values();
+    void print_parents();
 
 };
 
 #endif /* MATRIX_H */
-

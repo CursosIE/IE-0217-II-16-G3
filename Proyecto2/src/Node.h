@@ -27,6 +27,8 @@ public:
 
     Node();
     
+    Node(const Node &N);
+    
     Node(int x, int y);
 
     Node(int f, int g, int h, int type, Node* father);
@@ -34,19 +36,26 @@ public:
 
     virtual ~Node();
 
-    void set_parent(Node* p);
+    void set_parent(Node p);
     
     void set_start();
     
     void set_goal();
-    
+        
     void set_obstacle();
     
-    int operator==(const Node &N);
+    int operator==(const Node &N)const;
+    
+    Node& operator=(const Node &N);    
+    
+    int operator!=(const Node &N)const;
+    
+    int operator<(const Node &N)const;
+    
+    int operator>(const Node &N) const;
     
 private:
 
 };
 
 #endif /* NODE_H */
-

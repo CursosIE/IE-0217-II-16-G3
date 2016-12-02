@@ -1,0 +1,6 @@
+El makefile cuenta con dos targets:
+
+Cmasmas: compila los codigos en C++, imprime en consola el resultado del algoritmo A* y crea el archivo "out.txt" que contiene la impresión mencionada.
+Al final borra el ejecutable "main". 
+
+Python: corre el archivo "b.py" y crea una imágen en pixeles de color de la salida del programa, a partir del texto del "out.txt". Ademas recibe también el tamaño de las imagenes que va a crear en pixeles x pixeles, en el Makefile se tiene como default que se cree una imagen de 6 x 6.

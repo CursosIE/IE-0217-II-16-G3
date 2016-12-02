@@ -22,13 +22,21 @@ public:
     vector<Node> ClosedList;
     Matrix* Mapa;
     
+    Node current;
+    
     Astar();
     
     Astar(int tam, int start_x, int start_y, int goal_x, int goal_y);
     
-    void Add_neighbourgs_open_list(Node actual);
     void Set_Parent_G_Value(Node actual);
     void Add_To_Closed_List(Node actual);
+    void Add_To_Open_List(Node actual);
+    
+    void Find_path(Node &current);
+    
+    void Remove_Node_Open_List();
+    
+    Node Get_Node_Open_List();    
     
     int Find_Node_Open_List(const Node a);
     
@@ -40,4 +48,3 @@ public:
 };
 
 #endif /* ASTAR_H */
-
