@@ -35,15 +35,6 @@ void Astar::Remove_Node_Open_List() {
     OpenList.erase(it);
 }
 
-/*void Astar::Find_path(Node current){
-    Node temp=current;
-    Camino.push_back(temp);
-    Node temp1;
-    while(temp1.parent){
-        Node temp1=*temp.parent;
-        Camino.push_back(temp1);
-    }
-}*/
 
 void Astar::Find_path(Node &current){
     
@@ -85,7 +76,7 @@ void Astar::Set_Parent_G_Value(Node actual) {
                 if (i == actual.pos_x && j == actual.pos_y) {
                 } else {
                     if (Find_Node_Closed_List(Mapa->matrix[i][j]) == 0 && Find_Node_Open_List(Mapa->matrix[i][j])==0) {//Punto de inflexión
-                        Mapa->matrix[i][j].parent= &(Mapa->matrix[actual.pos_x][actual.pos_y]); //Ese ampersand esta bien????
+                        Mapa->matrix[i][j].parent= &(Mapa->matrix[actual.pos_x][actual.pos_y]); 
                         Mapa->matrix[i][j].G_value = Mapa->get_Movement_value(Mapa->matrix[actual.pos_x][actual.pos_y], Mapa->matrix[i][j]);
                     }
                 }
@@ -98,13 +89,7 @@ Astar::Astar(int tam, int start_x, int start_y, int goal_x, int goal_y) {
     Mapa = new Matrix(tam);
     Mapa->matrix[start_x][start_y].set_start();
     Mapa->matrix[goal_x][goal_y].set_goal();
-    Mapa->set_G_value(Mapa->matrix[start_x][start_y]);
-    //Mapa->matrix[4][1].set_obstacle();
-    //Mapa->matrix[0][3].set_obstacle();    
-    //Mapa->matrix[1][3].set_obstacle();
-    
-    
-    //Mapa->matrix[3][1].set_obstacle();    
+    Mapa->set_G_value(Mapa->matrix[start_x][start_y]);    
     Mapa->matrix[3][2].set_obstacle();
     Mapa->matrix[3][3].set_obstacle();    
     Mapa->matrix[3][4].set_obstacle();
